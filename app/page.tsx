@@ -1,24 +1,22 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import Square from "./components/Square.component";
+import Square from "./components/Square/Square.component";
 
 export default function Board() {
   return (
     <>
       <div className="board-row">
-        <Square value="1" />
-        <button className="square">2</button>
-        <button className="square">3</button>
+        {[1, 2, 3].map((value) => (
+          <Square key={value} value={value.toString()} />
+        ))}
       </div>
       <div className="board-row">
-        <button className="square">4</button>
-        <button className="square">5</button>
-        <button className="square">6</button>
+        {[4, 5, 6].map((value) => (
+          <Square key={value} value={value.toString()} />
+        ))}
       </div>
       <div className="board-row">
-        <button className="square">7</button>
-        <button className="square">8</button>
-        <button className="square">9</button>
+        {[7, 8, 9].map((value) => (
+          <Square key={value} value={value.toString()} />
+        ))}
       </div>
     </>
   );
